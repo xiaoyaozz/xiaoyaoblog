@@ -1,0 +1,69 @@
+baseURL = "https://example.com/"
+title = "My Blog"
+theme = "yinyang"
+hasCJKLanguage = true
+summaryLength = 30
+
+defaultContentLanguage = "zh"
+[languages]
+  [languages.zh]
+    label = "中文"
+    locale = "zh-CN"
+    weight = 1
+    [languages.zh.params]
+      extraCSSFiles = ["/css/index.css", "/css/flexboxgrid-6.3.1.min.css"]
+      extraHead = '<script src="/js/lazyload.min.js"></script><script src="/js/darkmode-js.min.js"></script>'
+
+[pagination]
+  pagerSize = 10
+
+ShowPostNavLinks = true
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  headTitle = "我的博客"
+  [params.author]
+    name = "作者"
+    homepage = "https://example.com/"
+  Description = "博客描述"
+  comments = true
+  mainSections = ["posts"]
+  categories = ''
+  search = true
+
+  reward = true
+  reward_guide = "赞赏支持"
+
+  twikoo_envId = "your-twikoo-env-id"
+
+  busuanzi = true
+
+  extraCSSFiles = ["/css/index.css", "/css/flexboxgrid-6.3.1.min.css"]
+  extraHead = '<script src="/js/lazyload.min.js"></script><script src="/js/darkmode-js.min.js"></script>'
+
+  favicon = "/img/favicon.ico"
+
+  [params.menu]
+    name = "首页"
+    url = "/"
+
+[[params.socials]]
+  name = "关于"
+  link = "/about"
+
+[[params.sidebar]]
+  title = "侧边栏"
+  content = "<p>欢迎访问我的博客！</p>"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

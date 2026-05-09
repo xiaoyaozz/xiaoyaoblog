@@ -1,0 +1,5 @@
+hugo -F --cleanDestinationDir
+
+hugo server --buildDrafts --disableFastRender
+
+hugo new posts/1.md

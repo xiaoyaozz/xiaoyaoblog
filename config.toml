@@ -1,0 +1,63 @@
+baseURL = "https://www.165454.xyz/"
+title = "逍遥博客"
+theme = "yinyang-new"
+hasCJKLanguage = true
+summaryLength = 30
+
+# 新版本语言设置
+defaultContentLanguage = "zh"
+[languages]
+  [languages.zh]
+  label = "中文"
+  locale = "zh-CN"
+  weight = 1
+  [languages.zh.params]
+    extraCSSFiles = ["/css/index.css", "/css/flexboxgrid-6.3.1.min.css"]
+    extraHead = '<script src="/js/darkmode-js.min.js"></script>'
+
+[pagination]
+  pagerSize = 10
+
+ShowPostNavLinks = true
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  headTitle = "逍遥博客"
+  [params.author]          # 改成表格，匹配模板里的 .Site.Params.author.name
+    name = "逍遥"
+  authorHomepage = "https://www.165454.xyz/"
+  Description = "心空无住，任运逍遥。但尽凡情，不求圣解。"
+  comments = true
+  mainSections = ["posts"]
+  categories = ''
+  search = true
+  postAds = "广告位"
+
+  reward = true
+  reward_guide = "赞赏支持"
+  favicon = "/img/favicon.ico"
+  twikoo_envId = ""
+  busuanzi = true
+  extraCSSFiles = ["/css/index.css", "/css/flexboxgrid-6.3.1.min.css"]
+  extraHead = '<script src="/js/darkmode-js.min.js"></script>'
+
+[[params.socials]]
+  name = "订阅"
+  link = "/index.xml"
+
+[[params.socials]]
+  name = "关于我"
+  link = "/about"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

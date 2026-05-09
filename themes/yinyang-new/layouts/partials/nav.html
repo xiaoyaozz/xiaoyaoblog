@@ -1,0 +1,8 @@
+<div class="nav" style="text-align: left;width: 80%;">
+  {{ range .Site.Params.menu }}
+  <a href="{{ .url }}" style="font-size: 16px; text-decoration: none; margin: auto 20px;">{{ .name }}</a>
+  {{ end }}
+  {{ range first 3 .Site.Taxonomies.tags.ByCount }}
+  <a href="{{ .Page.RelPermalink }}" style="font-size: 12px; text-decoration: none; margin: auto 20px;">{{ .Page.Title }}</a>
+  {{ end }}
+</div>

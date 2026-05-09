@@ -1,0 +1,26 @@
+<div id="post-nav-links">
+{{ if .Paginator.HasPrev }}
+  <a href="{{ .Paginator.Prev.URL }}" class="prev">←前一页</a>
+{{ end }}
+
+<span class="page-number">第 {{ .Paginator.PageNumber }} 页 / 共 {{ .Paginator.TotalPages }} 页</span>
+
+{{ $paginate := .Paginator }}
+{{ if gt $paginate.TotalPages 1 }}
+  <ul class="pagination">
+    {{ range $paginate.Pagers }}
+      {{ if eq . $paginate }}
+        <li class="active"><span>{{ .PageNumber }}</span></li>
+      {{ else }}
+        <li><a href="{{ .URL }}">{{ .PageNumber }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+{{ end }}
+
+{{ if .Paginator.HasNext }}
+  <a href="{{ .Paginator.Next.URL }}" class="next">下一页 →</a>
+{{ end }} 
+</div>
+
+

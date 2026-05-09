@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+    <article class="post {{ .Site.Language.Label }}" id="article">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="site-header">
+                    {{ partial "header.html" . }}
+                </div>
+                <header class="post-header">
+                    <h1 class="post-title">{{ .Title }}</h1>
+                    {{ if in .Site.Params.mainSections .Type }}
+                    <div class="row post-desc">
+                        <div class="col-xs-6">
+                            {{ if .Date }}
+                            <time class="post-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
+                                {{ .Date.Format "2006-01-02" }}
+                            </time>
+                            {{ end }}
+                        </div>
+                        <div class="col-xs-6">
+                            {{ if .Site.Params.author.name }}
+                            <div class="post-author">
+                                <a target="_blank" href="{{ .Site.Params.author.homepage }}">@{{ .Site.Params.author.name }}</a>
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                </header>
+
+                <main>
+                    {{ block "main" . }}
+                    {{ end }}
+                </main>
+                {{ block "footerfiles" . }}
+                {{ end }}
+                <footer>
+                    {{ partial "footer.html" . }}
+                </footer>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>

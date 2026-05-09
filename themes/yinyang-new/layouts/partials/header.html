@@ -1,0 +1,46 @@
+{{ $curLanguageName := .Site.Language.Label }}
+<header>
+  <div class="header-title">
+    <a href="{{ .Site.LanguagePrefix }}/">{{ or .Site.Params.headTitle }}</a>
+  </div>
+  <div class="header-subtitle">{{ .Site.Params.Description }}</div>
+
+  <script>
+    const options = {
+      bottom: '32px',
+      right: '32px',
+      left: 'unset',
+      time: '1.0s',
+      mixColor: '#fff',
+      backgroundColor: '#fff',
+      buttonColorDark: '#131824',
+      buttonColorLight: '#fff',
+      saveInCookies: false,
+      label: '🌀',
+      autoMatchOsTheme: true
+    }
+
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
+
+  </script>
+
+</header>
+<div class="row end-md center-xs header-items">
+  {{ partial "nav.html" . }}
+  {{ range .Site.Params.socials }}
+  <div class="header-item">
+    <a href="{{ .link }}" target="_blank">{{ .name }}</a>
+  </div>
+  {{ end }}
+  <div class="search"><a href="/search/">搜索</a></div>
+</div>
+
+<div class="row end-xs">
+  {{ range .Site.Home.AllTranslations -}} {{ if ne .Language.Label $curLanguageName }}
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/{{ .Lang }}/">{{ .Language.Label }}</a>
+  </div>
+  {{ end }} {{ end }}
+</div>
+<div class="header-line"></div>
