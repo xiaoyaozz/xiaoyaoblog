@@ -1,0 +1,12 @@
+{{ if .Site.Params.sidebar }}
+<div class="col-md-3">
+    <div id="sidebar">
+      {{ range .Site.Params.sidebar }}
+      <div class="sidebar-item">
+        {{ if .title }}<h3>{{ .title }}</h3>{{ end }}
+        {{ .content | safeHTML }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

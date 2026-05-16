@@ -14,3 +14,9 @@ Thumbs.db
 # Build output
 *.exe
 *.log
+
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+pnpm-store/
+package-lock.json

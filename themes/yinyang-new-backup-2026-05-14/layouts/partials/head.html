@@ -41,7 +41,6 @@
   <meta property="og:image" content="{{ .Site.Params.favicon }}" />
   {{ end }}
 
-  <!-- 外部 CSS（从 static 目录加载） -->
   {{ range .Site.Params.extraCSSFiles }}
     <link rel="stylesheet" href="{{ . | relURL }}">
   {{ end }}
@@ -49,11 +48,7 @@
   <link href="{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
 
   {{ if .Site.Params.TwitterCards }}{{ template "_internal/twitter_cards.html" . }}{{ end }}
-  
-  <!-- GLightbox 灯箱 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" />
 
-  <!-- 自定义 head 内容（包含 JS 等） -->
   {{ .Site.Params.extraHead | safeHTML }}
 
 </head>

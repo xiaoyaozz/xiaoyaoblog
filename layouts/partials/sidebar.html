@@ -1,20 +1,43 @@
 <div class="col-md-3">
     <!-- 右侧工具栏内容 -->
     <div id="sidebar">
-      <h3>工具栏</h3>
-      <p>让他多赚一些钱，好好更新博客。</p>
-      <!-- 可以添加更多的工具栏内容 -->
-        <!-- 打赏 -->
+      <h1 class="site-date-catalog" aria-hidden="true" style="visibility:hidden;">&nbsp;</h1>
+      <div class="sidebar-box">
+        <h3>最新文章</h3>
+        <ul class="recent-posts">
+          {{ range first 6 (where .Site.RegularPages "Section" "posts") }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="sidebar-box">
+        <h3>工具栏</h3>
+        <p>让他多赚一些钱，好好更新博客。</p>
         {{ partial "reward.html" . }}
-        <!-- 音乐播放器 -->
-        <div class="music-player">
-          <!-- <audio controls>
-            <source src="https://od.lk/s/MTZfMTMwOTMzOTk3Xw/%E5%AD%A3%E5%80%99%E9%A3%8E.mp3" type="audio/mpeg">
-            您的浏览器不支持音频播放。
-          </audio> -->
-          <p>感谢打赏</p>
-          <p>因为空间限制了中文目录，请善用搜索找你需要的文章。</p>
-          <script type="text/javascript" id="myhk" src="https://myhkw.cn/api/player/173409036855" key="173409036855" m="1"></script>
+        </div>
+      </div>
+      <div class="sidebar-box">
+        <h3>网站信息统计</h3>
+          <div class="site-stats">
+            <table>
+              <tr><td>文章总数：</td><td>{{ len (where .Site.RegularPages "Section" "posts") }} 篇</td></tr>
+              <tr><td>评论数目：</td><td><span id="commentCount">17679</span> 条</td></tr>
+              <tr><td>标签总数：</td><td>{{ len .Site.Taxonomies.tags }} 个</td></tr>
+              <tr><td>浏览次数：</td><td><span id="busuanzi_value_site_pv"></span> 次</td></tr>
+              <tr><td>友链总数：</td><td><span id="friendCount">20</span> 个</td></tr>
+              <tr><td>运行天数：</td><td><span id="runningDays"></span> 天</td></tr>
+              <tr><td>建站时间：</td><td>2011-06-22</td></tr>
+              <tr><td>最后更新：</td><td>{{ with (where .Site.RegularPages "Section" "posts") }}{{ range first 1 . }}{{ .Lastmod.Format "2006-01-02" }}{{ end }}{{ end }}</td></tr>
+              <tr><td>数据查询：</td><td>19 次</td></tr>
+              <tr><td>生成耗时：</td><td>0.06696 秒</td></tr>
+            </table>
+          </div>
+          <script>
+            var startDate = new Date('2011-06-22');
+            var today = new Date();
+            var days = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+            document.getElementById('runningDays').textContent = days;
+          </script>
         </div>
     </div>
   </div>

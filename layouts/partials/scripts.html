@@ -15,3 +15,16 @@
    });
   
 </script>
+
+<!-- GLightbox 灯箱 -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+<script>
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({
+      selector: '.markdown-body img, .entry-content img',
+      touchNavigation: true,
+      loop: true,
+      draggable: true,
+    });
+  }
+</script>

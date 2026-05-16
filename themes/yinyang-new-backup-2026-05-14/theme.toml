@@ -1,0 +1,9 @@
+name = "yinyang"
+license = "MIT"
+licenselink = "https://github.com/ananke-io/hugo-theme-ananke/blob/master/LICENSE"
+description = "A simple Hugo theme with dark mode, reward/donation, comments support"
+homepage = "https://github.com/yourusername/hugo-theme-yinyang"
+tags = ["blog", "minimalist", "dark-mode", "responsive"]
+features = ["responsive", "dark-mode", "comments", "reward", "search", "gallery"]
+min_version = "0.80"
+author = "xiaoyao"

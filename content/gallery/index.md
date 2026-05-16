@@ -1,8 +1,6 @@
 ---
 title: "我的相册"
-gallery:
-  - url: "/images/pan1.jpg"
-    name: "照片描述1"
-  - url: "/images/pan2.jpg"
-    name: "照片描述2"
 ---
+
+![照片1](/images/pan1.jpg)
+![照片2](/images/pan2.jpg)

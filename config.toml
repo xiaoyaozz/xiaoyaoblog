@@ -2,26 +2,27 @@ baseURL = "https://www.165454.xyz/"
 title = "逍遥博客"
 theme = "yinyang-new"
 hasCJKLanguage = true
+enableEmoji = true
 summaryLength = 30
+mainSections = ["posts"]
 
-# 新版本语言设置
 defaultContentLanguage = "zh"
+
 [languages]
   [languages.zh]
-  label = "中文"
-  locale = "zh-CN"
-  weight = 1
-  [languages.zh.params]
-    extraCSSFiles = ["/css/index.css", "/css/flexboxgrid-6.3.1.min.css"]
-    extraHead = '<script src="/js/darkmode-js.min.js"></script>'
-
-[pagination]
-  pagerSize = 10
-
-ShowPostNavLinks = true
+    locale = "zh-Hans"
+    label = "简体中文"
+    weight = 1
+    [languages.zh.params]
+      extraCSSFiles = ["/css/index.css", "/css/flexboxgrid-6.3.1.min.css"]
+      extraHead = '<script src="/js/darkmode-js.min.js"></script>'
 
 [permalinks]
   posts = "/posts/:slug/"
+
+[pagination]
+  pagerSize = 10
+  path = "page"
 
 [taxonomies]
   tag = "tags"
@@ -29,25 +30,98 @@ ShowPostNavLinks = true
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      strikethrough = true
+      [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.delete]
+          enable = true
+        [markup.goldmark.extensions.extras.insert]
+          enable = true
+        [markup.goldmark.extensions.extras.mark]
+          enable = true
+        [markup.goldmark.extensions.extras.subscript]
+          enable = true
+        [markup.goldmark.extensions.extras.superscript]
+          enable = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    style = "github"
+    tabWidth = 2
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "信仰"
+    url = "/tags/信仰/"
+    weight = 20
+  [[menu.main]]
+    name = "电子书"
+    url = "/tags/电子书/"
+    weight = 30
+  [[menu.main]]
+    name = "金口诀卷上"
+    url = "/tags/卷上/"
+    weight = 40
+  [[menu.main]]
+    name = "金口诀卷中"
+    url = "/tags/卷中/"
+    weight = 50
+  [[menu.main]]
+    name = "金口诀卷下"
+    url = "/tags/卷下/"
+    weight = 60
+
+  [[menu.footer]]
+    name = "订阅"
+    url = "/index.xml"
+    weight = 10
+  [[menu.footer]]
+    name = "关于我"
+    url = "/about"
+    weight = 20
+
+  [[menu.social]]
+    name = "订阅"
+    url = "/index.xml"
+    weight = 10
+
 [params]
   headTitle = "逍遥博客"
-  [params.author]          # 改成表格，匹配模板里的 .Site.Params.author.name
+  description = "心空无住，任运逍遥。但尽凡情，不求圣解。"
+  keywords = ["逍遥博客", "博客", "禅修", "大六壬", "金口诀", "传统文化"]
+  defaultAuthor = "逍遥"
+  language = "zh"
+  shortName = "逍遥博客"
+  favicon = "/img/favicon.ico"
+
+  [params.author]
     name = "逍遥"
   authorHomepage = "https://www.165454.xyz/"
+
   Description = "心空无住，任运逍遥。但尽凡情，不求圣解。"
   comments = true
   mainSections = ["posts"]
-  categories = ''
   search = true
   postAds = "广告位"
-
   reward = true
   reward_guide = "赞赏支持"
-  favicon = "/img/favicon.ico"
   twikoo_envId = ""
   busuanzi = true
-  extraCSSFiles = ["/css/index.css", "/css/flexboxgrid-6.3.1.min.css"]
-  extraHead = '<script src="/js/darkmode-js.min.js"></script>'
 
 [[params.socials]]
   name = "订阅"
@@ -57,7 +131,71 @@ ShowPostNavLinks = true
   name = "关于我"
   link = "/about"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+  [params.header]
+    sticky = false
+    [params.header.logo]
+      image = ""
+      link = "/"
+
+  dock = "scroll"
+  contentWidth = "56rem"
+
+  [params.toc]
+    enabled = true
+    position = "center"
+
+  colorScheme = "default"
+  [params.themes]
+    [params.themes.default]
+      name = "Default"
+      order = 1
+    [params.themes.nord]
+      name = "Nord"
+      order = 2
+    [params.themes.sunset]
+      name = "Sunset"
+      order = 3
+    [params.themes.dracula]
+      name = "Dracula"
+      order = 4
+
+  [params.home]
+    recentPostsCount = 6
+    contentOrder = ["recent-posts"]
+
+  [params.post]
+    showRelated = true
+    relatedPostsCount = 3
+
+  [params.comments]
+    enabled = false
+    system = "twikoo"
+    [params.comments.twikoo]
+      envId = ""
+      region = "ap-shanghai"
+      path = ""
+      lang = "zh-CN"
+
+  [params.katex]
+    enabled = true
+
+  [params.mermaid]
+    enabled = false
+
+  [params.codeblock]
+    [params.codeblock.collapse]
+      enabled = true
+      defaultState = "expanded"
+      autoCollapseLines = 30
+      autoCollapseHeight = 400
+      collapsedHeight = 120
+
+  [params.readingProgress]
+    enabled = true
+    showOnHomepage = false
+
+  [params.dateFormat]
+    full = ":date_full"
+    long = ":date_long"
+    medium = ":date_medium"
+    short = ":date_short"
