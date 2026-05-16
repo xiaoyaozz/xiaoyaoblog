@@ -1,4 +1,4 @@
-﻿/* global */
+/* global */
 
 
 body {
@@ -94,16 +94,10 @@ a:hover {
 .header-subtitle {
   color: #666;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .header-items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 30px 0 10px;
+  margin: 10px 0;
 }
 
 .header-item {
@@ -121,118 +115,16 @@ a:hover {
   font-weight: 600;
 }
 
-.search a {
-  text-decoration: none;
-}
+/* posts list */
 
-.header-right {
-  display: flex;
-  gap: 16px;
+#posts-list {
+  min-height: 600px;
 }
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-}
-.nav-links a {
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-.nav-links a:hover { text-decoration: underline; }
-
-.site-footer {
-   margin-top: 50px;
-   margin-bottom: 20px;
-   padding: 16px 0;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 10px;
-   width: 100%;
-   border-top: 1px solid #000;
- }
- .footer-links {
-   display: flex;
-   justify-content: flex-end;
-   gap: 24px;
-   width: 100%;
- }
- .footer-link {
-   text-decoration: none;
-   color: #000;
- }
- .footer-link:hover {
-   text-decoration: underline;
- }
- .footer-copyright {
-   font-size: 0.9rem;
-   color: #555;
- }
-
-.recent-posts {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.recent-posts li {
-  padding: 0.4rem 0;
-}
-.recent-posts li a {
-  font-size: 0.88rem;
-  text-decoration: none;
-}
-.recent-posts li a:hover {
-  text-decoration: underline;
-}
-
-.pagination-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
-.pagination {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin: 0;
-  padding: 0;
-}
-.pagination li {
-  list-style: none;
-}
-.pagination a, .pagination .active a {
-  display: inline-block;
-  padding: 4px 10px;
-  border: 1px solid #000;
-  text-decoration: none;
-  color: #000;
-  font-size: 0.9rem;
-}
-.pagination a:hover { background: #eee; }
-.pagination .active a { background: #000; color: #fff; border-color: #000; }
-.pagination .ellipsis span {
-  display: inline-block;
-  padding: 4px 4px;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-#post-nav-links { text-align: center; margin: 20px 0; }
-#post-nav-links .prev, #post-nav-links .next {
-  text-decoration: none;
-  font-size: 0.9rem;
-  border: 1px solid #000;
-  padding: 4px 10px;
-  white-space: nowrap;
-}
-#post-nav-links .prev:hover, #post-nav-links .next:hover { background: #eee; }
 
 .posts-line {
   font-size: 1.2rem;
   margin: 12px 0;
+  /* 后加的 */
   border: 1px solid #000;
   width: 100%;
   margin-bottom: 30px;
@@ -252,6 +144,22 @@ a:hover {
   margin-bottom: 3px;
 }
 
+.site-footer {
+   margin-top: 50px;
+   margin-bottom: 80px; 
+   display: flex;
+   justify-content: flex-end;
+   flex-wrap: wrap; 
+   padding: 12px 0;
+   border-width: 1px;
+   border-style: solid none;
+   border-color: #000;
+ }
+
+.site-footer-item {
+  margin-right: 12px;
+}
+
 /* post */
 
 .post-content img {
@@ -262,9 +170,8 @@ a:hover {
   width: auto;
 }
 
-  .nav-links a:last-child {
-    border-bottom: none;
-  }
+.post-header {
+  margin-bottom: 50px;
 }
 
 .post-title {
@@ -654,59 +561,11 @@ border: none
 }
 @media (max-width: 1199px) {
   #sidebar {
-    display: none !important;
+    display: none;
   }
   #posts-list {
-    width: 100%;
+    width: 90%;
   }
-}
-
-@media screen and (max-width: 705px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #000;
-        border-radius: 4px;
-        background: #fff;
-    }
-    .nav-links.show {
-        display: flex;
-    }
-    .nav-links a {
-        padding: 8px 4px;
-        border-bottom: 1px solid #eee;
-        font-size: 0.95rem;
-    }
-    .nav-links a:last-child {
-        border-bottom: none;
-    }
-    .hamburger {
-        display: block;
-        font-size: 28px;
-        background: none;
-        border: 1px solid #000;
-        border-radius: 4px;
-        cursor: pointer;
-        padding: 6px 14px;
-        line-height: 1;
-        margin-bottom: 8px;
-    }
-    .hamburger:hover {
-        background: #f0f0f0;
-    }
-}
-
-@media screen and (min-width: 706px) {
-    .nav-links {
-        display: flex !important;
-        flex-wrap: wrap;
-        gap: 8px 30px;
-    }
-    .hamburger {
-        display: none;
-    }
 }
 
 #sidebar {
@@ -724,9 +583,26 @@ border: none
 }
 
 .hamburger {
+    display: none;
     font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 5px 10px;
+}
+
+@media screen and (max-width: 692px) {
+    .hamburger {
+        display: inline-block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .nav-links a {
+        margin: 5px 20px !important;
+    }
 }

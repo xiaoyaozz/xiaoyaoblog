@@ -29,8 +29,14 @@
   </script>  
 
 </header>
-<div class="row header-items">
+<div class="row end-md center-xs header-items">
   {{ partial "nav.html" . }}
+  {{ range .Site.Params.socials }}
+  <div class="header-item">
+    <a href="{{ .link }}" target="_blank">{{ .name }}</a>
+  </div>
+  {{ end }}
+  <div class="search"><a href="/search/">搜索</a></div>
 </div>
 
 <div class="row end-xs">

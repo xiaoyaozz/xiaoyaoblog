@@ -31,6 +31,14 @@
 </header>
 <div class="row header-items">
   {{ partial "nav.html" . }}
+  <div class="header-right">
+    {{ range .Site.Params.socials }}
+    <div class="header-item">
+      <a href="{{ .link }}" target="_blank">{{ .name }}</a>
+    </div>
+    {{ end }}
+    <div class="search"><a href="/search/">搜索</a></div>
+  </div>
 </div>
 
 <div class="row end-xs">

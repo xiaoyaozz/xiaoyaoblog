@@ -245,13 +245,6 @@ a:hover {
   text-align: center;
 }
 
-.posts-category {
-  padding: 3px 0;
-  border: #000 2px solid;
-  border-radius: 5px;
-  margin-bottom: 3px;
-}
-
 /* post */
 
 .post-content img {
@@ -724,9 +717,26 @@ border: none
 }
 
 .hamburger {
+    display: none;
     font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 5px 10px;
+}
+
+@media screen and (max-width: 692px) {
+    .hamburger {
+        display: inline-block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .nav-links a {
+        margin: 5px 20px !important;
+    }
 }
