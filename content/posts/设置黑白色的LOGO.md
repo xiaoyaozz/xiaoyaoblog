@@ -1,6 +1,6 @@
----
+﻿---
 title: 设置黑白色的LOGO
-slug: "set-black-white-logo"
+slug: "设置黑白色的LOGO"
 date: 2024-03-22
 categories: ['分享']
 draft: false

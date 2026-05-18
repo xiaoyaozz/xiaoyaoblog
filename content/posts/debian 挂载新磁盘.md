@@ -1,6 +1,6 @@
----
+﻿---
 title: "debian 挂载新磁盘"
-slug: "debian mount new disk"
+slug: "debian 挂载新磁盘"
 date: 2025-01-24T14:29:15+08:00
 summary: "使用 fdisk -l 命令查看系统中的磁盘和分区信息，确定要挂载的磁盘设备名称，例如 /dev/sdb1 。" 
 draft: false    

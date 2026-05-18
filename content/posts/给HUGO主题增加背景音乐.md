@@ -1,6 +1,6 @@
----
+﻿---
 title: "给HUGO主题增加背景音乐"
-slug: "hugomusic"
+slug: "给HUGO主题增加背景音乐"
 date: 2024-03-21
 tags: ['分享']
 categories:  ['分享']

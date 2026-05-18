@@ -1,6 +1,6 @@
----
+﻿---
 title: 如何在博客网站hexo的文章中添加图片
-slug: "how-to-add-image-in-hexo-article"
+slug: "如何在博客网站hexo的文章中添加图片"
 date: 2024-01-23 16:13:02
 categories:  ['分享']
 tags: ['分享']
