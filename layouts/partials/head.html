@@ -56,4 +56,15 @@
   <!-- 自定义 head 内容（包含 JS 等） -->
   {{ .Site.Params.extraHead | safeHTML }}
 
+  <!-- 百度统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?287279b2989b9621da773d4c1c28d166";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 </head>
