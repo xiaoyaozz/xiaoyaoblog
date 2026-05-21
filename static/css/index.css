@@ -5,6 +5,8 @@ body {
   font-family: "Bree Serif", sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0 20px;
+  background-color: #bcc1bd !important;
+  color: #111111;
 }
 
 
@@ -16,7 +18,7 @@ article {
 }
 
 a {
-  color: #000;
+  color: #111111;
   text-decoration: none;
 }
 
@@ -36,7 +38,7 @@ a:hover {
 
 .markdown-body a {
   text-decoration: underline;
-  text-decoration-color: #000;
+  text-decoration-color: #111111;
 }
 
 .markdown-body blockquote {
@@ -113,7 +115,7 @@ a:hover {
 .header-line {
   width: 100%;
   border-width: 1px;
-  border-color: #000;
+  border-color: #111111;
   border-style: solid none none none;
 }
 
@@ -149,7 +151,7 @@ a:hover {
    align-items: center;
    gap: 10px;
    width: 100%;
-   border-top: 1px solid #000;
+   border-top: 1px solid #111111;
  }
  .footer-links {
    display: flex;
@@ -159,7 +161,7 @@ a:hover {
  }
  .footer-link {
    text-decoration: none;
-   color: #000;
+   color: #111111;
  }
  .footer-link:hover {
    text-decoration: underline;
@@ -206,13 +208,13 @@ a:hover {
 .pagination a, .pagination .active a {
   display: inline-block;
   padding: 4px 10px;
-  border: 1px solid #000;
+  border: 1px solid #111111;
   text-decoration: none;
-  color: #000;
+  color: #111111;
   font-size: 0.9rem;
 }
 .pagination a:hover { background: #eee; }
-.pagination .active a { background: #000; color: #fff; border-color: #000; }
+.pagination .active a {   background: #111111; color: #fff; border-color: #111111; }
 .pagination .ellipsis span {
   display: inline-block;
   padding: 4px 4px;
@@ -224,7 +226,7 @@ a:hover {
 #post-nav-links .prev, #post-nav-links .next {
   text-decoration: none;
   font-size: 0.9rem;
-  border: 1px solid #000;
+  border: 1px solid #111111;
   padding: 4px 10px;
   white-space: nowrap;
 }
@@ -233,7 +235,7 @@ a:hover {
 .posts-line {
   font-size: 1.2rem;
   margin: 12px 0;
-  border: 1px solid #000;
+  border: 1px solid #111111;
   width: 100%;
   margin-bottom: 30px;
   padding: 4%;
@@ -247,7 +249,7 @@ a:hover {
 
 .posts-category {
   padding: 3px 0;
-  border: #000 2px solid;
+  border: #111111 2px solid;
   border-radius: 5px;
   margin-bottom: 3px;
 }
@@ -277,7 +279,7 @@ a:hover {
   font-weight: 600;
   padding: 2px 5px;
   margin-right: 6px;
-  border: #000 2px solid;
+  border: #111111 2px solid;
   border-radius: 5px;
 }
 
@@ -310,7 +312,7 @@ a:hover {
 .related-content {
   border-width: 1px;
   border-style: solid;
-  border-color: #000;
+  border-color: #111111;
   padding: 0 10px;
   margin-bottom: 50px;
   margin-top: 100px;
@@ -354,7 +356,7 @@ a:hover {
   width: 100%;
   position: absolute;
   bottom: 0;
-  background: white;
+  background: #bcc1bd;
 }
 
 @media screen and (max-width: 600px) {
@@ -407,7 +409,7 @@ img{vertical-align: middle;width: 250px;}
   float: right;
   font-size: 21px;
   line-height: 1;
-  color: #000;
+  color: #111111;
   text-shadow: 0 1px 0 #fff;
   opacity: .2
 }
@@ -453,7 +455,7 @@ button.close {
   top: 50%;
   margin: -195px 0 0 -171px;
   border: 1px solid #eee;
-  background: #fff;
+  background: #bcc1bd;
   border-radius: 6px;
   z-index: 100;
   display: none;
@@ -538,7 +540,7 @@ text-align: center;
 }
 
 .zs-modal-btns .btn-blink {
-  background: #fff;
+  background: #bcc1bd;
   border-color: #e26d6d;
   color: #e26d6d;
   font-weight: bold;
@@ -595,7 +597,7 @@ display: inherit;
 .search-container {
   padding:2em 0em;
   margin: 0 5em 3em;
-  background-color: #fff
+  background-color: #bcc1bd
 }
 
 #search-box {
@@ -667,9 +669,9 @@ border: none
         flex-direction: column;
         width: 100%;
         padding: 12px;
-        border: 1px solid #000;
+        border: 1px solid #111111;
         border-radius: 4px;
-        background: #fff;
+        background: #bcc1bd;
     }
     .nav-links.show {
         display: flex;
@@ -686,7 +688,7 @@ border: none
         display: block;
         font-size: 28px;
         background: none;
-        border: 1px solid #000;
+        border: 1px solid #111111;
         border-radius: 4px;
         cursor: pointer;
         padding: 6px 14px;
@@ -714,7 +716,7 @@ border: none
 }
 
 .sidebar-box {
-    border: 1px solid #000;
+    border: 1px solid #111111;
     padding: 20px;
     margin-bottom: 15px;
 }
