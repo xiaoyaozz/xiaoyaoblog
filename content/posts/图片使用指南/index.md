@@ -63,3 +63,53 @@ tags: ["记录"]
 - 图片放在 `static/` 目录下
 - 引用时以 `/` 开头，例如 `pan1.jpg`
 - 支持子目录： `/images/album/photo.jpg`
+
+---
+
+## 5. 控制灯箱中的图片大小
+
+GLightbox 默认按图片原始分辨率显示，并支持缩放。你可以通过以下方式控制灯箱中的图片展示效果：
+
+### 5.1 使用 HTML 标签自定义大小
+
+在 `.md` 文件中直接写 HTML（本主题已开启 HTML 支持），用 `data-width` / `data-height` 控制灯箱内的显示尺寸：
+
+```html
+<a href="原图.jpg" data-width="800px" data-height="auto">
+  <img src="缩略图.jpg" alt="描述" />
+</a>
+```
+
+```html
+<a href="原图.jpg" data-width="90vw" data-height="70vh">
+  <img src="缩略图.jpg" alt="描述" />
+</a>
+```
+
+支持的单位：`px`、`%`、`vw`（视口宽度）、`vh`（视口高度）。
+
+### 5.2 响应式图片（适配不同屏幕）
+
+为不同分辨率提供不同图片：
+
+```html
+<a href="default.jpg"
+   data-sizes="(max-width: 600px) 480px, 800px"
+   data-srcset="/images/small.jpg 480w, /images/big.jpg 800w">
+  <img src="/images/default.jpg" alt="描述" />
+</a>
+```
+
+### 5.3 全局默认大小（修改所有灯箱图片）
+
+如需统一限制灯箱内图片的最大尺寸，可以在 `static/css/index.css` 中添加样式：
+
+```css
+.gslide-image img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+}
+```
+
+> **注意：** 直接在 Markdown 中用 `![描述](图片.jpg)` 无法添加自定义属性。如需精细控制，请使用上方 HTML 语法替代 Markdown 图片语法。
