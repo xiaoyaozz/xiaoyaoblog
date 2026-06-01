@@ -591,6 +591,10 @@ display: inherit;
   width: 72%;
   font-size: 12px;
 }
+.entry-content img {
+  max-width: 100%;
+  height: auto;
+}
 
 /*  搜索样式 */
 
